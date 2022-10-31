@@ -24,7 +24,7 @@ function App() {
                 </mask>
                 <circle fill='#FF8E09' r={r} cx={center} cy={position} mask="url(#moon)"/>
             </svg>
-            <input type='range' min={0} max={101} style={{width: 500}} value={moonWidth}
+            <input type='range' min={0} max={moonSize + 1} style={{width: 500}} value={moonWidth}
                    onInput={(event) => setMoonWidth(+event.currentTarget.value)}/>
         </div>
     );
