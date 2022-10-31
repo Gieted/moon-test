@@ -7,7 +7,7 @@ function visualOffset(r: number, o: number) {
 }
 
 function App() {
-    const [moonWidth, setMoonWidth] = useState(() => 35);
+    const [moonWidth, setMoonWidth] = useState(() => 33);
     const position = 150;
     const moonSize = 100;
     const r = moonSize / 2;
@@ -20,11 +20,12 @@ function App() {
                 <circle fill='#1D1D1D' r={100} cx={position} cy={position}/>
                 <mask id='moon' height={position} width={position}>
                     <circle fill='white' r={r + moonWidth} cx={center} cy={position}/>
-                    <circle fill='black' r={r + 1} cx={center + moonWidth} cy={position}/>
+                    <circle fill='black' r={r} cx={center + moonWidth} cy={position}/>
                 </mask>
                 <circle fill='#FF8E09' r={r} cx={center} cy={position} mask="url(#moon)"/>
             </svg>
-            <input type='range' min={0} max={moonSize + 1} style={{width: 500}} value={moonWidth}
+            <label>{moonWidth}</label>
+            <input type='range' min={0} max={moonSize} style={{width: 500}} value={moonWidth}
                    onInput={(event) => setMoonWidth(+event.currentTarget.value)}/>
         </div>
     );
