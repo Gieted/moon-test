@@ -22,7 +22,7 @@ function App() {
                     <circle fill='white' r={r + moonWidth} cx={center} cy={position}/>
                     <circle fill='black' r={r} cx={center + moonWidth} cy={position}/>
                 </mask>
-                <circle fill='#FF8E09' r={r} cx={center} cy={position} mask="url(#moon)"/>
+                <circle fill='#FF8F00' r={r} cx={center} cy={position} mask="url(#moon)"/>
             </svg>
             <label>{moonWidth}</label>
             <input type='range' min={0} max={moonSize} style={{width: 500}} value={moonWidth}
